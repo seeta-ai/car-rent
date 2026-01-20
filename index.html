@@ -9,130 +9,400 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="">
-        <div class="h-screen w-full bg-black flex">
-            <div class="h-full w-6/12 bg-blue-300 flex flex-col justify-center relative pl-20 pt-10">
-                <h1 class="text-5xl font-bold max-w-lg  mb-6
-                ">Explore our
-                    <span class="text-[#FFA633]">Verified &amp; Professional</span>
-                    Cars
-                </h1>
-                <p class="text-xl text-[#676767] font-semibold max-w-lg">Modern design sports cruisers for those who
-                    crave
-                    adventure & grandeur Cars for relaxing with your loved ones.</p>
-                <img src="img/ban-icon-2.svg" class=" absolute bg-no-repeat  top-28 right-[5%]">
-                <div class="flex gap-5 mt-10">
-                    <div class="">
-                        <ul class="flex  relative -space-x-2">
-                            <li><img src="img/profile/avatar-1.webp" alt="" class=" rounded-full w-[45px] "></li>
-                            <li><img src="img/profile/avatar-2.webp" alt="" class=" rounded-full w-[45px] "></li>
-                            <li><img src="img/profile/avatar-3.webp" alt="" class=" rounded-full w-[45px] "></li>
+    <!-- hero-section -->
+    <div class="bg-[url(./img/banner-img/banner-img.jpg)] bg-black bg-bottom bg-no-repeat pb-10">
+        <img src="./img/banner-img/banner-bg-01.webp" class="absolute bg-top bg-no-repeat right-0 w-sm">
+
+        <!-- navbar section -->
+        <header class="bg-white lg:bg-transparent/6 backdrop-blur-sm fixed w-full z-20 top-0 left-0  px-20">
+            <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 p-4">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img src="img/logo/logo-img-2.svg" alt="" class="h-8 w-auto lg:hidden" />
+                        <img src="img/logo/logo-white-01.svg" alt="" class="h-8 w-auto hidden lg:block" />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="flex hidden lg:flex lg:gap-x-12 text-lg font-semibold hover:text-yellow cursor-pointer">
+                    <li id="home" class="text-white hover:text-yellow-600 cursor-pointer relative">
+                        Home
+                        <a id="home-arrow" class="text-white">></a>
+                        <ul id="home-dropdown"
+                            class="bg-white/80 p-4 hidden absolute mt-8 rounded-md border-black border-1 shadow-lg space-y-2">
+                            <li><a class="text-black" href="#">Action</a></li>
+                            <li><a class="text-black" href="#">Another action</a></li>
+                            <li><a class="text-black" href="#">Something else here</a></li>
                         </ul>
+                    </li>
+                    <li class="text-white hover:text-yellow-600">Listing</li>
+                    <li class="text-white hover:text-yellow-600">page</li>
+                    <li class="text-white hover:text-yellow-600">Blog</li>
+                    <li class="text-white hover:text-yellow-600">Dashboard</li>
+                </ul>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-2">
+                    <a href="#"
+                        class="font-semibold text-white xl:px-5 xl:py-2 rounded bg-stone-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
+                            class="fa-regular fa-user mx-1"></i>Sign In</a>
+
+                    <a href="#"
+                        class="font-semibold text-white xl:px-6 xl:py-2 rounded bg-yellow-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
+                            class="fa-solid fa-lock mx-1"></i>Sign Up</a>
+
+                </div>
+            </nav>
+            <el-dialog>
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel
+                            class="fixed inset-y-0 right-0 z-6 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <span class="sr-only">Your Company</span>
+                                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                                        alt="" class="h-8 w-auto" />
+                                </a>
+                                <button type="button" command="close" commandfor="mobile-menu"
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true" class="size-6">
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-gray-500/10">
+                                    <div class="space-y-2 py-6">
+                                        <div class="-mx-3">
+                                            <button type="button" command="--toggle" commandfor="products"
+                                                class="flex w-full items-center text-white justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-black hover:bg-gray-6 hover:text-yellow">
+                                                Home
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                    aria-hidden="true"
+                                                    class="size-5 flex-none in-aria-expanded:rotate-180">
+                                                    <path
+                                                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                                                        clip-rule="evenodd" fill-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="products" hidden class="mt-2 block space-y-2">
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">frhht</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Engagement</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Security</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Integrations</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Automations</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Watch
+                                                    demo</a>
+                                                <a href="#"
+                                                    class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-black hover:bg-gray-6">Contact
+                                                    sales</a>
+                                            </el-disclosure>
+                                        </div>
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-6">Listing</a>
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-6">Pages</a>
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-6">blog</a>
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-6">Dashboard</a>
+                                    </div>
+                                    <div class="py-6">
+                                        <a href="#"
+                                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-6">Log
+                                            in</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
                     </div>
-                    <div class="">
-                        <h4 class="text-xl font-extrabold text-white">6K + Customers</h4>
-                        <p class="font-medium text-[#676767] text-[18px]">has used our renting services </p>
-                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
 
+        <div class="px-20">
+            <!-- img section -->
+            <div class="h-screen w-full  flex z-10 relative ">
 
-                </div>
-                <div class="">
-                    <button class="mt-5 bg-[#FFA633] text-white font-bold text-base px-2 py-2 rounded-lg ">
-                        Rent a Car <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
-                    </button>
-                    <button class="mt-5 bg-[#2F2F2F] text-white font-bold text-base px-2 py-2 rounded-lg "><i
-                            class="fa-solid fa-circle-plus text-[13px] "></i>
-                        Add your Car
-                    </button>
-                </div>
-
-            </div>
-            <div class="h-full w-6/12 bg-black-200 relative ">
-                <img class="h-auto w-auto object-cover absolute top-[40%] right-15" src="img/banner/banner-img.jpg">
-
-                <div
-                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-90 left-[-65px] flex flex-col justify-center items-center">
-
-                    <span class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
-
-                        <p class="text-white font-bold  text-sm">Starts From</p>
-                        <h6 class="text-white font-bold text-[18px]">$650<span class="text-white text-sm"> /day</span>
-                        </h6>
-                    </span>
-                </div>
-
-                <!-- <div class="bg-green-500/75 w-30 h-25 rounded-full absolute top-[60%] left-[-50px] flex flex-col justify-center items-center"> -->
-
-                <span
-                    class=" bg-[#1FBC2F] w-45 h-10 rounded-full flex  justify-center items-center absolute top-49 right-[130px] ">
-                    <i class="fa-solid fa-circle text-white text-[6px] me-3"></i>
-                    <p class="text-white font-bold  text-sm"> Available for Rent</p>
-                    <div class="w-4 h-4 skew-20 bg-[#1FBC2F] absolute rotate-45 -bottom-1  "></div>
-                </span>
-                <!-- </div> -->
-            </div>
-        </div>
-
-        <div
-            class="w-full bg-green-500 h-35 bg-black-500/200 rounded-full flex justify-evenly px-2 py-2 mx-auto border-10 border-stone-400/50 ">
-
-            <form action="" class="flex items-center">
-                <div class="flex gap-4  justify-evenly gap-20 divide-solid divide-white divide-x-1">
-                    <div class="">
-                        <div class="pr-5">
-                            <h4 class="text-white font-bold  text-sm">Pickup Location</h>
-
-                                <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
-                                        class="fa-solid fa-chevron-down ms-15"></i></p>
-                        </div>
+                <div class="h-full w-6/12 flex flex-col justify-center relative pt-10">
+                    <h1 class="text-5xl text-white font-bold max-w-lg  mb-6
+                ">Explore our
+                        <span class="text-[#FFA633]">Verified &amp; Professional</span>
+                        Cars
+                    </h1>
+                    <p class="text-xl text-[#676767] font-semibold max-w-lg">Modern design sports cruisers for those who
+                        crave
+                        adventure & grandeur Cars for relaxing with your loved ones.</p>
+                    <img src="img/ban-icon-2.svg" class=" absolute bg-no-repeat  top-28 right-[5%]">
+                    <div class="flex gap-5 mt-10">
                         <div class="">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                            <ul class="flex  relative -space-x-2">
+                                <li><img src="img/profile/avatar-1.webp" alt="" class=" rounded-full w-[45px] "></li>
+                                <li><img src="img/profile/avatar-2.webp" alt="" class=" rounded-full w-[45px] "></li>
+                                <li><img src="img/profile/avatar-3.webp" alt="" class=" rounded-full w-[45px] "></li>
                             </ul>
                         </div>
+                        <div class="">
+                            <h4 class="text-xl font-extrabold text-white">6K + Customers</h4>
+                            <p class="font-medium text-[#676767] text-[18px]">has used our renting services </p>
+                        </div>
+
 
                     </div>
+                    <div class="">
+                        <button class="mt-5 bg-[#FFA633] text-white font-bold text-base px-2 py-2 rounded-lg ">
+                            Rent a Car <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                        </button>
+                        <button class="mt-5 bg-[#2F2F2F] text-white font-bold text-base px-2 py-2 rounded-lg "><i
+                                class="fa-solid fa-circle-plus text-[13px] "></i>
+                            Add your Car
+                        </button>
+                    </div>
 
-                    <div class="pr-5 ">
-
-                        <h4 class="text-white font-bold  text-sm">Drop Location</h4>
-                        <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
-                                class="fa-solid fa-chevron-down ms-15"></i></p>
-                    </div>
-                    <div class=" pr-5">
-                        <h4 class="text-white font-bold  text-sm">Pickup Date & time</h4>
-                        <p class="text-white font-bold  text-sm flex mt-2">2025-03-14 12:00 <i
-                                class="fa-solid fa-chevron-down ms-15"></i></p>
-                    </div>
-                    <div class=" pr-5">
-                        <h4 class="text-white font-bold  text-sm">Drop Date & time</h4>
-                        <p class="text-white font-bold  text-sm flex mt-2">2025-03-15 12:00 <i
-                                class="fa-solid fa-chevron-down ms-15"></i></p>
-                    </div>
                 </div>
-                <div class="">
-                    <button
-                        class="bg-[#FFA633] text-white font-bold text-base px-5 py-5 rounded-full  hover:bg-yellow-500 ">
-                        <i class="fa-solid fa-magnifying-glass text-[15px] ms-1"></i>
-                    </button>
+                <div class="h-full w-6/12  relative ">
+                    <img class="h-auto w-auto object-cover absolute top-[40%] right-15" src="img/banner/banner-img.jpg">
+
+                    <div
+                        class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-83 left-[-40px] flex flex-col justify-center items-center">
+
+                        <span
+                            class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+
+                            <p class="text-white font-bold  text-sm">Starts From</p>
+                            <h6 class="text-white font-bold text-[18px]">$650<span class="text-white text-sm">
+                                    /day</span>
+                            </h6>
+                        </span>
+                    </div>
+
+                    <!-- <div class="bg-green-500/75 w-30 h-25 rounded-full absolute top-[60%] left-[-50px] flex flex-col justify-center items-center"> -->
+
+                    <span
+                        class=" bg-[#1FBC2F] w-45 h-10 rounded-full flex  justify-center items-center absolute top-49 right-[130px] ">
+                        <i class="fa-solid fa-circle text-white text-[6px] me-3"></i>
+                        <p class="text-white font-bold  text-sm"> Available for Rent</p>
+                        <div class="w-4 h-4 skew-20 bg-[#1FBC2F] absolute rotate-45 -bottom-1  "></div>
+                    </span>
+                    <!-- </div> -->
                 </div>
-            </form>
+            </div>
+
+            <!-- search section -->
+            <div
+                class="w-full  h-30 bg-slate-200/20 rounded-full flex justify-evenly px-2 py-2 mx-auto border-10 border-stone-200/20 mb-10">
+
+                <form action="" class="flex items-center">
+                    <div class="flex gap-4  justify-evenly gap-20 divide-solid divide-white divide-x-1">
+                        <div class="">
+                            <div class="pr-5">
+                                <h4 class="text-white font-bold  text-sm">Pickup Location</h>
+
+                                    <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
+                                            class="fa-solid fa-chevron-down ms-15"></i></p>
+                            </div>
+                            <div class="">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="pr-5 ">
+
+                            <h4 class="text-white font-bold  text-sm">Drop Location</h4>
+                            <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
+                                    class="fa-solid fa-chevron-down ms-15"></i></p>
+                        </div>
+                        <div class=" pr-5">
+                            <h4 class="text-white font-bold  text-sm">Pickup Date & time</h4>
+                            <p class="text-white font-bold  text-sm flex mt-2">2025-03-14 12:00 <i
+                                    class="fa-solid fa-chevron-down ms-15"></i></p>
+                        </div>
+                        <div class=" pr-5">
+                            <h4 class="text-white font-bold  text-sm">Drop Date & time</h4>
+                            <p class="text-white font-bold  text-sm flex mt-2">2025-03-15 12:00 <i
+                                    class="fa-solid fa-chevron-down ms-15"></i></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button
+                            class="bg-[#FFA633] text-white font-bold text-base px-5 py-5 rounded-full  hover:bg-yellow-500 ">
+                            <i class="fa-solid fa-magnifying-glass text-[15px] ms-1"></i>
+                        </button>
+                    </div>
+                </form>
 
 
 
+            </div>
         </div>
     </div>
 
+    <!-- featured-section -->
+    <div class="">
+        <div class="text-center mt-20 mb-10">
+            <h2 class="text-4xl font-bold text-black dark:text-white">Featured Categories</h2>
+            <img src="" alt="">
+            <p class="text-gray-500 dark:text-gray-300 mt-4 text-lg mx-auto max-w-2xl">Know what you’re looking for?
+                Browse our extensive selection of cars</p>
+        </div>
+        <div class="grid grid-cols-6 gap-4 p-10">
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Sports Coupe
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        14 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-01.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+            <!-- 2nd-card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Sedan
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        12 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-02.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+            <!-- 3rd-card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Sports Car
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        35 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-03.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+            <!-- 4th-card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Pickup
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        35 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-04.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+            <!-- 5th-card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Family MPV
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        35 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-05.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+            <!-- 6th-card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                <div class="px-2 py-4 mx-auto">
+                    <h6
+                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        Crossover
+                    </h6>
+                    <i
+                        class="fa-solid fa-circle-arrow-right left-30 absolute text-xl text-gray-300 group-hover:text-yellow-500 transition duration-300 ease-in-out group-hover:translate-x-1/2"></i>
+                    <p class="text-gray-500 dark:text-gray-200 mt-2 text-sm ">
+                        30 Cars
+                    </p>
+                </div>
+                <img src="img/feature-car/category-06.png"
+                    class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+        </div>
+
+
+
+    </div>
     <!-- tailwind js-->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+        // Dropdown functionality
+        document.getElementById('home').addEventListener('click', function () {
+            var dropdown = document.getElementById('home-dropdown');
+            var arrow = document.getElementById('home-arrow');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+
+            // Toggle arrow direction
+            if (arrow.textContent === '>') {
+                arrow.textContent = 'v';
+            } else {
+                arrow.textContent = '>';
+            }
+        });
+
+    </script>
 </body>
 
 </html>
