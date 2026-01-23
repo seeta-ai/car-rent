@@ -5,12 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- swipper-js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <!-- font-aswesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: white;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: 0;
+    }
+
+    .btn:hover::before {
+        transform: translateY(0);
+    }
+
+    .btn:hover {
+        color: black;
+    }
+</style>
 
 <body>
     <!-- hero-section -->
@@ -18,22 +39,22 @@
         <img src="./img/banner-img/banner-bg-01.webp" class="absolute bg-top bg-no-repeat right-0 w-sm">
 
         <!-- navbar section -->
-        <header class="bg-white lg:bg-transparent/6 backdrop-blur-sm fixed w-full z-20 top-0 left-0  px-20">
+        <header class="text-stone-400 lg:bg-transparent/6 backdrop-blur-sm fixed w-full z-20 top-0 left-0 px-20">
             <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 p-4">
                 <div class="flex lg:flex-1">
-                    <a href="#" class="-m-1.5 p-1.5">
+                    <a href="#" class="-m-1.4 p-1.4">
                         <span class="sr-only">Your Company</span>
                         <img src="img/logo/logo-img-2.svg" alt="" class="h-8 w-auto lg:hidden" />
-                        <img src="img/logo/logo-white-01.svg" alt="" class="h-8 w-auto hidden lg:block" />
+                        <img src="img/logo/text-stone-400-01.svg" alt="" class="h-8 w-auto hidden lg:block" />
                     </a>
                 </div>
                 <div class="flex lg:hidden">
                     <button type="button" command="show-modal" commandfor="mobile-menu"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        class="-m-2.4 inline-flex items-center justify-center rounded-md p-2.4 text-gray-700">
                         <span class="sr-only">Open main menu</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" data-slot="icon"
                             aria-hidden="true" class="size-6">
-                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.4 4.25h16.4" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
@@ -41,9 +62,9 @@
                 <ul class="flex hidden lg:flex lg:gap-x-12 text-lg font-semibold hover:text-yellow cursor-pointer">
                     <li id="home" class="text-white hover:text-yellow-600 cursor-pointer relative">
                         Home
-                        <a id="home-arrow" class="text-white">></a>
+                        <a id="home-arrow" class="text-stone-400">></a>
                         <ul id="home-dropdown"
-                            class="bg-white/80 p-4 hidden absolute mt-8 rounded-md border-black border-1 shadow-lg space-y-2">
+                            class="text-stone-400/80 p-4 hidden absolute mt-8 rounded-md border-black border-1 shadow-lg space-y-2">
                             <li><a class="text-black" href="#">Action</a></li>
                             <li><a class="text-black" href="#">Another action</a></li>
                             <li><a class="text-black" href="#">Something else here</a></li>
@@ -56,11 +77,11 @@
                 </ul>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-2">
                     <a href="#"
-                        class="font-semibold text-white xl:px-5 xl:py-2 rounded bg-stone-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
+                        class="font-semibold text-black xl:px-4 xl:py-2 rounded bg-stone-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
                             class="fa-regular fa-user mx-1"></i>Sign In</a>
 
                     <a href="#"
-                        class="font-semibold text-white xl:px-6 xl:py-2 rounded bg-yellow-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
+                        class="font-semibold text-black xl:px-6 xl:py-2 rounded bg-yellow-200 lg:px-3 lg:py-1 text-sm xl:text-sm "><i
                             class="fa-solid fa-lock mx-1"></i>Sign Up</a>
 
                 </div>
@@ -69,17 +90,17 @@
                 <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
                     <div tabindex="0" class="fixed inset-0 focus:outline-none">
                         <el-dialog-panel
-                            class="fixed inset-y-0 right-0 z-6 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            class="fixed inset-y-0 right-0 z-6 w-full overflow-y-auttext-stone-400 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div class="flex items-center justify-between">
-                                <a href="#" class="-m-1.5 p-1.5">
+                                <a href="#" class="-m-1.4 p-1.4">
                                     <span class="sr-only">Your Company</span>
                                     <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                                         alt="" class="h-8 w-auto" />
                                 </a>
                                 <button type="button" command="close" commandfor="mobile-menu"
-                                    class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                    class="-m-2.4 rounded-md p-2.4 text-gray-700">
                                     <span class="sr-only">Close menu</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
                                         data-slot="icon" aria-hidden="true" class="size-6">
                                         <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -90,11 +111,11 @@
                                     <div class="space-y-2 py-6">
                                         <div class="-mx-3">
                                             <button type="button" command="--toggle" commandfor="products"
-                                                class="flex w-full items-center text-white justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-black hover:bg-gray-6 hover:text-yellow">
+                                                class="flex w-full items-center text-white justify-between rounded-lg py-2 pr-3.4 pl-3 text-base/7 font-semibold text-black hover:bg-gray-6 hover:text-yellow">
                                                 Home
                                                 <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
                                                     aria-hidden="true"
-                                                    class="size-5 flex-none in-aria-expanded:rotate-180">
+                                                    class="size-4 flex-none in-aria-expanded:rotate-180">
                                                     <path
                                                         d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                                                         clip-rule="evenodd" fill-rule="evenodd" />
@@ -130,7 +151,7 @@
                                     </div>
                                     <div class="py-6">
                                         <a href="#"
-                                            class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-6">Log
+                                            class="-mx-3 block rounded-lg px-3 py-2.4 text-base/7 font-semibold text-white hover:bg-gray-6">Log
                                             in</a>
                                     </div>
                                 </div>
@@ -154,8 +175,8 @@
                     <p class="text-xl text-[#676767] font-semibold max-w-lg">Modern design sports cruisers for those who
                         crave
                         adventure & grandeur Cars for relaxing with your loved ones.</p>
-                    <img src="img/ban-icon-2.svg" class=" absolute bg-no-repeat  top-28 right-[5%]">
-                    <div class="flex gap-5 mt-10">
+                    <img src="img/ban-icon-2.svg" class=" absolute bg-no-repeat  top-28 right-[4%]">
+                    <div class="flex gap-4 mt-10">
                         <div class="">
                             <ul class="flex  relative -space-x-2">
                                 <li><img src="img/profile/avatar-1.webp" alt="" class=" rounded-full w-[45px] "></li>
@@ -171,10 +192,10 @@
 
                     </div>
                     <div class="">
-                        <button class="mt-5 bg-[#FFA633] text-white font-bold text-base px-2 py-2 rounded-lg ">
+                        <button class="mt-4 bg-[#FFA633] text-white font-bold text-base px-2 py-2 rounded-lg ">
                             Rent a Car <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
                         </button>
-                        <button class="mt-5 bg-[#2F2F2F] text-white font-bold text-base px-2 py-2 rounded-lg "><i
+                        <button class="mt-4 bg-[#2F2F2F] text-white font-bold text-base px-2 py-2 rounded-lg "><i
                                 class="fa-solid fa-circle-plus text-[13px] "></i>
                             Add your Car
                         </button>
@@ -191,7 +212,7 @@
                             class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
 
                             <p class="text-white font-bold  text-sm">Starts From</p>
-                            <h6 class="text-white font-bold text-[18px]">$650<span class="text-white text-sm">
+                            <h6 class="text-white font-bold text-[18px]">$650<span class="text-stone-400 text-sm">
                                     /day</span>
                             </h6>
                         </span>
@@ -201,8 +222,8 @@
 
                     <span
                         class=" bg-[#1FBC2F] w-45 h-10 rounded-full flex  justify-center items-center absolute top-49 right-[130px] ">
-                        <i class="fa-solid fa-circle text-white text-[6px] me-3"></i>
-                        <p class="text-white font-bold  text-sm"> Available for Rent</p>
+                        <i class="fa-solid fa-circle text-stone-400 text-[6px] me-3"></i>
+                        <p class="text-stone-400 font-bold  text-sm"> Available for Rent</p>
                         <div class="w-4 h-4 skew-20 bg-[#1FBC2F] absolute rotate-45 -bottom-1  "></div>
                     </span>
                     <!-- </div> -->
@@ -214,9 +235,9 @@
                 class="w-full  h-30 bg-slate-200/20 rounded-full flex justify-evenly px-2 py-2 mx-auto border-10 border-stone-200/20 mb-10">
 
                 <form action="" class="flex items-center">
-                    <div class="flex gap-4  justify-evenly gap-20 divide-solid divide-white divide-x-1">
+                    <div class="flex gap-4  justify-evenly gap-20 divide-solid ditext-stone-400 divide-x-1">
                         <div class="">
-                            <div class="pr-5">
+                            <div class="pr-4">
                                 <h4 class="text-white font-bold  text-sm">Pickup Location</h>
 
                                     <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
@@ -234,18 +255,18 @@
 
                         </div>
 
-                        <div class="pr-5 ">
+                        <div class="pr-4 ">
 
                             <h4 class="text-white font-bold  text-sm">Drop Location</h4>
                             <p class="text-white font-bold  text-sm flex mt-2">Choose Location <i
                                     class="fa-solid fa-chevron-down ms-15"></i></p>
                         </div>
-                        <div class=" pr-5">
+                        <div class=" pr-4">
                             <h4 class="text-white font-bold  text-sm">Pickup Date & time</h4>
                             <p class="text-white font-bold  text-sm flex mt-2">2025-03-14 12:00 <i
                                     class="fa-solid fa-chevron-down ms-15"></i></p>
                         </div>
-                        <div class=" pr-5">
+                        <div class=" pr-4">
                             <h4 class="text-white font-bold  text-sm">Drop Date & time</h4>
                             <p class="text-white font-bold  text-sm flex mt-2">2025-03-15 12:00 <i
                                     class="fa-solid fa-chevron-down ms-15"></i></p>
@@ -253,7 +274,7 @@
                     </div>
                     <div class="">
                         <button
-                            class="bg-[#FFA633] text-white font-bold text-base px-5 py-5 rounded-full  hover:bg-yellow-500 ">
+                            class="bg-[#FFA633] text-white font-bold text-base px-4 py-4 rounded-full  hover:bg-yellow-500 ">
                             <i class="fa-solid fa-magnifying-glass text-[15px] ms-1"></i>
                         </button>
                     </div>
@@ -268,17 +289,20 @@
     <!-- featured-section -->
     <div class="">
         <div class="text-center mt-20 mb-10">
-            <h2 class="text-4xl font-bold text-black dark:text-white">Featured Categories</h2>
-            <img src="" alt="">
-            <p class="text-gray-500 dark:text-gray-300 mt-4 text-lg mx-auto max-w-2xl">Know what you’re looking for?
+            <h2 class="text-5xl font-bold text-black dark:text-stone-400">Featured Categories</h2>
+            <div class="flex  mt-4  relative">
+                <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-105 bottom-6">
+                <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-105 bottom-6">
+            </div>
+            <p class="text-gray-500 dark:text-gray-300 mt-1 text-lg mx-auto max-w-2xl">Know what you’re looking for?
                 Browse our extensive selection of cars</p>
         </div>
         <div class="grid grid-cols-6 gap-4 p-10">
             <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                class=" text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Sports Coupe
                     </h6>
                     <i
@@ -291,11 +315,11 @@
                     class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
             <!-- 2nd-card -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+            <div class="text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden
+                border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Sedan
                     </h6>
                     <i
@@ -309,10 +333,10 @@
             </div>
             <!-- 3rd-card -->
             <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+                class=" text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Sports Car
                     </h6>
                     <i
@@ -325,11 +349,11 @@
                     class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
             <!-- 4th-card -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+            <div class="text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden
+                border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Pickup
                     </h6>
                     <i
@@ -342,11 +366,11 @@
                     class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
             <!-- 5th-card -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+            <div class="text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden
+                border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Family MPV
                     </h6>
                     <i
@@ -359,11 +383,11 @@
                     class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
             <!-- 6th-card -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
+            <div class="text-stone-400 dark:bg-gray-800 rounded-lg relative h-60 border-2 overflow-hidden
+                border-neutral-200 group hover:bg-black transition duration-300 ease-in-out">
                 <div class="px-2 py-4 mx-auto">
                     <h6
-                        class="text-gray-bold dark:text-white text-lg mt-5 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
+                        class="text-gray-bold text-black text-lg mt-4 text-base font-bold tracking-tight group-hover:text-white transition duration-300 ease-in-out">
                         Crossover
                     </h6>
                     <i
@@ -376,33 +400,1286 @@
                     class="absolute bottom-6 right-0 group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
         </div>
-
-
-
+        <button
+            class=" btn relative overflow-hidden bg-black text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+            <span class="relative z-10 flex items-center">
+                View ALL
+                <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+            </span>
+        </button>
     </div>
-    <!-- tailwind js-->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <script>
-        // Dropdown functionality
-        document.getElementById('home').addEventListener('click', function () {
-            var dropdown = document.getElementById('home-dropdown');
-            var arrow = document.getElementById('home-arrow');
-            if (dropdown.style.display === 'block') {
-                dropdown.style.display = 'none';
-            } else {
-                dropdown.style.display = 'block';
-            }
+    <!-- best-platform -->
 
-            // Toggle arrow direction
-            if (arrow.textContent === '>') {
-                arrow.textContent = 'v';
-            } else {
-                arrow.textContent = '>';
-            }
-        });
+    <div class=" ">
+        <div class="grid grid-cols-2 gap-4 p-10 ">
+            <div class="">
+                <div class="text-center mt-20 ">
+                    <h3 class="text-4xl font-bold text-black dark:text-stone-400">Best Platform for Car Rental
+                    </h3>
+                    <div class="flex  mt-4  relative">
+                        <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-140 bottom-6">
+                        <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-140 bottom-6">
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-300 mt-1 text-lg text-start max-w-7xl ml-lg pl-20 max-w-xl">
+                        Why do we choose relax
+                        rent bikes generally if we travel in a un known cities with a bike in our hand we feel which is
+                        like a home town</p>
 
-    </script>
+                </div>
+                <img src="img/support/car-1.webp" alt=""
+                    class="pt-15 hover:scale-120 transition duration-700 ease-in-out overflow-hidden w-140">
+            </div>
+            <div class=" mt-15">
+                <div class="grid grid-flow-row grid-cols-2 gap-4  ">
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class=" bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <i
+                                    class="fa-solid fa-circle-info text-white absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base ">Dreams Rent offers a fleet of
+                                    high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd-card -->
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class="bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <!-- <i
+                                    class="fa-solid fa-circle-info text-stone-400 absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-squares-exclude-icon lucide-squares-exclude  text-white absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500 ">
+                                    <path
+                                        d="M16 12v2a2 2 0 0 1-2 2H9a1 1 0 0 0-1 1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h0" />
+                                    <path
+                                        d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1h-5a2 2 0 0 0-2 2v2" />
+                                </svg>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base">Dreams Rent offers a fleet of high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3rd-card -->
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class="bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <!-- <i
+                                    class="fa-solid fa-circle-info text-stone-400 absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500"></i> -->
+                                <i
+                                    class="fa-solid fa-money-bill text-white absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base">Dreams Rent offers a fleet of high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4th-card -->
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class="bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-car-taxi-front-icon lucide-car-taxi-front   text-white absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500 ">
+                                    <path d="M10 2h4" />
+                                    <path d="m21 8-2 2-1.4-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" />
+                                    <path d="M7 14h.01" />
+                                    <path d="M17 14h.01" />
+                                    <rect width="18" height="8" x="3" y="10" rx="2" />
+                                    <path d="M5 18v2" />
+                                    <path d="M19 18v2" />
+                                </svg>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base">Dreams Rent offers a fleet of high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5th-card -->
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class="bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <i
+                                    class="fa-solid fa-headset   text-white absolute top-[9px] left-[9px] text-lg group-hover:text-yellow-500"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base">Dreams Rent offers a fleet of high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6th-card -->
+                    <div
+                        class="p-[2px] h-fit rounded-xl hover:bg-gradient-to-r text-stone-400 via-yellow-500 to-blue-500 group ">
+
+                        <div class="bg-white rounded-xl py-10  flex gap-2 px-5 ">
+                            <div
+                                class="relative  bg-black group-hover:bg-blue-600 p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <i class="fa-solid fa-coins text-white absolute top-[9px] left-[9px] text-lg"></i>
+                            </div>
+                            <div class="">
+                                <h3 class="font-medium text-[18px] text-black">Best Deal</h3>
+                                <p class="text-stone-500 text-base text-base">Dreams Rent offers a fleet of high-quality
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------ -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popular car -->
+    <div class="">
+        <div class="text-center mt-20 mb-10">
+            <h3 class="text-4xl font-bold text-black dark:text-stone-400">Explore Popular Most Cars</h3>
+            <div class="flex  mt-4  relative">
+                <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-105 bottom-6">
+                <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-105 bottom-6">
+            </div>
+            <p class="text-gray-500 dark:text-gray-300 mt-1 text-lg mx-auto max-w-2xl">
+                Here's a list of some of the most popular cars globally</p>
+        </div>
+        <div class="grid flow-row grid-cols-3 gap-4 p-10 ">
+            <!-- car-1 -->
+            <div class="shadow-2xl relative rounded-lg group/card">
+                <div class="relative overflow-hidden ">
+                    <div class="flex absolute top-0  z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class=" rounded-full py-1 px-4 text-black font-lg bg-white">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg">Available</span>
+                        </div>
+                        <button class="text-red-400 py-[2px] px-1 rounded-full bg-white ">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px]"></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-11.webp"
+                        class="rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 2nd-card -->
+            <div class="shadow-2xl relative rounded-lg  group/card">
+                <div class="relative overflow-hidden">
+                    <div class="flex absolute top-0 z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class="bg-white rounded-full py-1 px-4 text-black font-lg bg-white">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg">Available</span>
+                        </div>
+                        <button class="text-red-400 py-[2px] px-1 rounded-full bg-white">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px]"></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-12.webp"
+                        class="rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 3rd-card -->
+            <div class="shadow-2xl relative rounded-lg group/card">
+                <div class="relative overflow-hidden">
+                    <div class="flex absolute top-0  z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class=" rounded-full py-1 px-4 text-black font-lg bg-white">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg">Available</span>
+                        </div>
+                        <button class="text-stone-400 py-[2px] px-1 rounded-full bg-white ">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px]"></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-13.webp"
+                        class="rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 4th-card -->
+            <div class="shadow-2xl relative rounded-lg group/card">
+                <div class="relative overflow-hidden">
+                    <div class="flex absolute top-0 z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class=" rounded-full py-1 px-4 text-black font-lg bg-white">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg ">Available</span>
+                        </div>
+                        <button class="text-stone-400 py-[2px] px-1 rounded-full bg-white">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px]"></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-16.jpg"
+                        class="rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black ">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 5th-card -->
+            <div class="shadow-2xl relative rounded-lg  group/card">
+                <div class="relative overflow-hidden">
+                    <div class="flex absolute top-0 z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class="text-black rounded-full py-1 px-4  font-lg bg-white">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg">Available</span>
+                        </div>
+                        <button class="text-stone-400 py-[2px] px-1 rounded-full bg-white">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px] "></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-15.webp"
+                        class=" rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- 6th-card -->
+            <div class="shadow-2xl relative rounded-lg group/card">
+                <div class="relative overflow-hidden">
+                    <div class="flex absolute top-0 z-20 left-0 w-full p-2 pt-3">
+                        <div class=" flex-1 ">
+                            <span class="text-black rounded-full py-1 px-4 bg-white font-lg">Toyota</span>
+                            <span class="bg-green-500  rounded-full py-1 px-4 text-white font-lg">Available</span>
+                        </div>
+                        <button class="text-stone-400 py-[2px] px-1 rounded-full bg-white ">
+                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                            <i class="fa-regular fa-heart text-red-400 text-[15px]"></i>
+                        </button>
+
+                    </div>
+                    <img src="img/popular-car/car-18.jpg"
+                        class="rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                    <span class="absolute bottom-5 flex items-center "><i
+                            class="fa-solid fa-location-dot text-white "></i>
+                        <p class="text-white ">Lasvegas</p>
+                    </span>
+                </div>
+                <div class="flex flex-col py-4 px-2 divide-y-1 text-stone-400">
+                    <div class="flex justify-between pb-5">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-xl font-bold text-black">Toyota Camry SE 350</h3>
+                            <div class="flex gap-2">
+                                <ul class="flex ">
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                    <li><i class="fa-solid fa-star text-stone-300"></i></li>
+                                </ul>
+                                <p class="text-stone-500">(4.0)138 Reviews</p>
+                            </div>
+                        </div>
+                        <div class="text-end pr-7">
+                            <h2 class="text-3xl font-bold text-stone-800">
+                                $160
+                                <span class="text-gray-700 text-xl">/day</span>
+                            </h2>
+                        </div>
+
+                    </div>
+
+                    <div class=" pt-3 pl-5">
+                        <ul class="flex justify-content-evenly gap-4">
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-01.svg"
+                                    class="size-4 ">
+                                <p class="text-stone-600">Auto</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-02.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">10 KM</p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-03.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">Diesel
+                                <p class="text-stone-600">10 KM</p>
+                                </p>
+                            </li>
+                            <li class="flex items-center gap-1"><img src="img/poular-car-icon/car-parts-05.svg"
+                                    class="size-4">
+                                <p class="text-stone-600">2018</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- ---- -->
+        </div>
+        <!-- Rent by brand -->
+        <div class=" mx-auto h-110 bg-black mb-5 ">
+            <div class="text-center mt-20 mb-10">
+                <h3 class="text-4xl font-bold text-white dark:text-stone-400 pt-5">Rent by Brands</h3>
+                <div class="flex  mt-4  relative">
+                    <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-130 bottom-5">
+                    <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-130 bottom-5">
+                </div>
+                <p class="text-gray-500 dark:text-gray-300  text-lg mx-auto max-w-2xl">
+                    Here's a list of some of the most popular cars globally</p>
+            </div>
+
+            <div class="  mx-20">
+                <!-- <div>
+                    <img src="img/coursel/brand-09.svg">
+                </div> -->
+                <div class="swiper mySwiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="img/coursel/brand-09.svg">
+                            <p class="text-stone-400 text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-10.svg">
+                            <p class="text-stone-400 text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-09.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-11.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-12.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-13.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-14.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-09.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-10.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-09.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-11.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-12.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-13.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/coursel/brand-14.svg">
+                            <p class="text-stone-400">Chevrolet</p>
+                        </div>
+                        ...
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </div>
+            <div class="">
+                <img src="img/half-banner/brand.png" class="mx-auto pt-10">
+            </div>
+        </div>
+
+        <!-- Rent-our car -->
+        <div class="flex gap-4 pb-5">
+            <div class="flex-[55%] pt-70 px-15">
+                <div class=" relative">
+                    <img src="img/our-rent-car/rent-car-1.webp" class="w-150">
+                    <div class="absolute -z-20 top-10 left-120">
+                        <img src="img/our-rent-car/car-grid-2.png" class="w-ful">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-[45%] px-15">
+                <div class="text-center mt-15">
+                    <h3 class="text-4xl font-bold text-black  pt-2">Rent Our Cars in 3 Steps</h3>
+
+                    <p class="text-gray-500 dark:text-gray-300  text-lg mx-auto max-w-2xl">
+                        Check how it Works to Rent Cars in DreamsRent</p>
+                </div>
+                <div class="">
+                    <!-- 1st-card -->
+                    <div class="p-[2px] h-fit rounded-xl  text-stone-400   ">
+
+                        <div class="bg-white rounded-xl py-3  flex gap-2 px-5 ">
+                            <div class="relative  bg-yellow-600  p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <!-- <i class="fa-solid fa-coins"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-calendar-heart-icon lucide-calendar-heart   text-white absolute top-[9px] left-[9px] text-lg">
+                                    <path d="M12.127 22H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125" />
+                                    <path
+                                        d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
+                                    <path d="M16 2v4" />
+                                    <path d="M3 10h18" />
+                                    <path d="M8 2v4" />
+                                </svg>
+                            </div>
+                            <div class="">
+                                <h2 class="font-medium text-[20px] text-black">
+                                    Choose Date & Locations</h2>
+                                <p class="text-stone-500 text-lg text-base">Determine the date & location for your car
+                                    rental. Consider factors such as your travel itinerary, pickup/drop-off locations
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd-card -->
+                    <div class="p-[2px] h-fit rounded-xl  text-stone-400   ">
+
+                        <div class="bg-white rounded-xl py-3  flex gap-2 px-5 ">
+                            <div class="relative  bg-blue-500  p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+                                <!-- <i class="fa-solid fa-coins"></i> -->
+                                <i
+                                    class="fa-solid fa-location-dot text-white absolute top-[9px] left-[9px] text-lg"></i>
+                            </div>
+                            <div class="">
+                                <h2 class="font-medium text-[20px] text-black ">
+                                    Select Pick-Up & Drop Locations</h2>
+                                <p class="text-stone-500 text-lg text-base">Check the availability of your desired
+                                    vehicle type for your chosen dates and location. Ensure that the rental rates,
+                                    taxes, fees, and any additional charges.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3rd-card -->
+                    <div class="p-[2px] h-fit rounded-xl  text-stone-400   ">
+
+                        <div class="bg-white rounded-xl py-3  flex gap-2 px-5 ">
+                            <div class="relative  bg-stone-900  p-5 left-0 w-8 h-8 rounded-lg mt-4  ">
+
+                                <i class="fa-solid fa-mug-hot text-white absolute top-[9px] left-[9px] text-lg"></i>
+                            </div>
+                            <div class="">
+                                <h2 class="font-medium text-[20px] text-black ">
+                                    Book your Car</h2>
+                                <p class="text-stone-500 text-lg text-base">Determine the date & location for your car
+                                    rental. Consider factors such as your travel itinerary, pickup/drop-off locations
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ok-section -->
+
+        <div class=" my-5 ">
+            <div
+                class="bg-[url(img/nunber-car/count-bg.png)] bg-black/99 py-10 px-5 mx-20 rounded-xl flex justify-evenly gap-2">
+                <div class=" text-center ">
+                    <h2 class="text-white text-2xl font-bold">16K+</h2>
+                    <div class=" h-1 w-60 bg-linear-to-r from-transparent via-white to-transparent my-2"></div>
+                    <p class="text-neutral-400 ">Happy Customers sell </p>
+                </div>
+                <!-- 2nd-num -->
+                <div class=" text-center ">
+                    <h2 class="text-white text-2xl font-bold">16K+</h2>
+                    <div class=" h-1 w-60 bg-linear-to-r from-transparent via-white to-transparent my-2"></div>
+                    <p class="text-neutral-400 ">Happy Customers sell </p>
+                </div>
+                <!-- 3rd-num -->
+                <div class=" text-center ">
+                    <h2 class="text-white text-2xl font-bold">16K+</h2>
+                    <div class=" h-1 w-60 bg-linear-to-r from-transparent via-white to-transparent my-2"></div>
+                    <p class="text-neutral-400 ">Happy Customers sell </p>
+                </div>
+
+                <!-- 4th-num -->
+                <div class=" text-center ">
+                    <h2 class="text-white text-2xl font-bold">16K+</h2>
+                    <div class=" h-1 w-60 bg-linear-to-r from-transparent via-white to-transparent my-2"></div>
+                    <p class="text-neutral-400 ">Happy Customers sell </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- car-coursel -->
+        <div class="">
+
+            <div
+                class="bg-[url(img/car-coursel/popular-bg.png)] relative bg-bottom bg-right bg-stone-200 py-50 w-full bg-no-repeat">
+                <div class="text-center mt-20 mb-10">
+                    <h3 class="text-4xl font-bold text-black dark:text-stone-400 pt-5">Popular Cars On Recommendations
+                    </h3>
+                    <div class="flex  mt-4  relative">
+                        <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-88 bottom-5">
+                        <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-88 bottom-5">
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-300  text-xl mx-auto max-w-2xl">
+                        Here are some versatile options that cater to different needs
+                    </p>
+
+                </div>
+
+                <div class="swiper carSwiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper w-full" style="transition-timing-function: linear !important;">
+                        <!-- Slides -->
+                        <div class="w-full swiper-slide custom-swiper-slider flex flex-col items-center">
+                            <div class="text-stone-400 text-center">
+                                <h3 class="text-2xl">AUDI0</h3>
+                                <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
+                            </div>
+                            <div class="mx-auto">
+                                <img src="img/nunber-car/car-1.png" class="items-center" class="relative">
+                                <div
+                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
+
+                                    <span
+                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+
+                                        <p class="text-white font-bold  text-sm">Starts From</p>
+                                        <h6 class="text-white font-bold text-[18px]">$650<span
+                                                class="text-stone-400 text-sm">
+                                                /day</span>
+                                        </h6>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mx-auto">
+                                <ul class="flex justify-content-evenly gap-2 ">
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                </ul>
+                                <button
+                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+                                    <span class="relative z-10 flex items-center">
+                                        View ALL
+                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 2nd-car-coursel -->
+                        <div class=" max-auto swiper-slide">
+                            <div class="text-stone-400 text-center">
+                                <h3 class="text-2xl">AUDI0</h3>
+                                <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
+                            </div>
+                            <div class="">
+                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
+                                <div
+                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
+
+                                    <span
+                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+
+                                        <p class="text-white font-bold  text-sm">Starts From</p>
+                                        <h6 class="text-white font-bold text-[18px]">$650<span
+                                                class="text-stone-400 text-sm">
+                                                /day</span>
+                                        </h6>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" ">
+                                <ul class="flex justify-content-evenly gap-2 ">
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                </ul>
+                                <button
+                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+                                    <span class="relative z-10 flex items-center">
+                                        View ALL
+                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 3rd-card-coursel -->
+                        <div class=" max-auto swiper-slide">
+                            <div class="text-stone-400 text-center">
+                                <h3 class="text-2xl">AUDI0</h3>
+                                <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
+                            </div>
+                            <div class="">
+                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
+                                <div
+                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
+
+                                    <span
+                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+
+                                        <p class="text-white font-bold  text-sm">Starts From</p>
+                                        <h6 class="text-white font-bold text-[18px]">$650<span
+                                                class="text-stone-400 text-sm">
+                                                /day</span>
+                                        </h6>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" ">
+                                <ul class="flex justify-content-evenly gap-2 ">
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                </ul>
+                                <button
+                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+                                    <span class="relative z-10 flex items-center">
+                                        View ALL
+                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 4th-card-coursel -->
+                        <div class=" max-auto swiper-slide">
+                            <div class="text-stone-400 text-center">
+                                <h3 class="text-2xl">AUDI0</h3>
+                                <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
+                            </div>
+                            <div class="">
+                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
+                                <div
+                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
+
+                                    <span
+                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+
+                                        <p class="text-white font-bold  text-sm">Starts From</p>
+                                        <h6 class="text-white font-bold text-[18px]">$650<span
+                                                class="text-stone-400 text-sm">
+                                                /day</span>
+                                        </h6>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" ">
+                                <ul class="flex justify-content-evenly gap-2 ">
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
+                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
+                                        <p class="text-white">Auto</p>
+                                    </li>
+                                </ul>
+                                <button
+                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+                                    <span class="relative z-10 flex items-center">
+                                        View ALL
+                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ------ -->
+                    </div>
+                </div>
+                <div class="bg-black h-80 w-full absolute bottom-0"></div>
+            </div>
+        </div>
+
+
+        <!-- Our Clients Feedback -->
+        <div class="px-30 mb-10">
+            <div class="text-center mt-20 mb-10">
+                <h3 class="text-4xl font-bold text-black dark:text-stone-400 pt-5">Our Clients Feedback</h3>
+                <div class="flex  mt-4  relative">
+                    <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-85 bottom-5">
+                    <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-85 bottom-5">
+                </div>
+                <p class="text-gray-500 dark:text-gray-300  text-lg mx-auto max-w-2xl">
+                    Provided by customers about their experience with a product or service.</p>
+            </div>
+            <div class="flex justify-between gap-3 mb-5">
+                <div
+                    class="bg-white bg-[url(./img/client-img/testimonial-icon-1.svg)] bg-no-repeat group/clientCard bg-top-right border-2 border-stone-400 rounded-lg py-6 px-5  text-gray-500 hover:bg-black">
+                    <img src="img/client-img/avatar-02.webp" class="rounded-full w-15 h-15 mx-auto  ">
+                    <p class="text-stone-600 mx-auto justify-center max-w-[91%] text-center py-3">Renting a car from
+                        Dreams rent made my vacation so much smoother! The
+                        process was quick</p>
+                    <ul class="flex justify-center py-lg">
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                    </ul>
+                    <div class="py-3">
+                        <h1 class="text-black text-xl font-bold text-center group-hover/clientCard:text-white">Kyle
+                            Roberts DVM</h1>
+                        <p class="text-stone-700 justify-center text-center ">Newyork,USA
+
+                        </p>
+                    </div>
+                </div>
+                <!-- 2nd-card -->
+                <div
+                    class="bg-white bg-[url(./img/client-img/testimonial-icon-1.svg)] bg-no-repeat group/clientCard bg-top-right border-2 border-stone-400 rounded-lg py-6 px-5  text-gray-500 hover:bg-black">
+                    <img src="img/client-img/avatar-02.webp" class="rounded-full w-15 h-15 mx-auto">
+                    <p class="text-stone-600 justify-center text-center py-3">Their wide selection
+                        of vehicles, convenient locations, and competitive prices
+                    </p>
+                    <ul class="flex justify-center py-lg">
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                    </ul>
+                    <div class="py-3">
+                        <h1 class="text-black text-xl font-bold text-center group-hover/clientCard:text-white">Kyle
+                            Roberts DVM</h1>
+                        <p class="text-stone-700 justify-center text-center ">Newyork,USA
+
+                        </p>
+                    </div>
+                </div>
+                <!-- 3rd-card -->
+                <div
+                    class="bg-white bg-[url(./img/client-img/testimonial-icon-1.svg)] bg-no-repeat group/clientCard bg-top-right border-2 border-stone-400 rounded-lg py-6 px-5  text-gray-500 hover:bg-black">
+                    <img src="img/client-img/avatar-02.webp" class="rounded-full w-15 h-15 mx-auto  ">
+                    <p class="text-stone-600 mx-auto justify-center max-w-[91%] text-center py-3">The spacious SUV we
+                        rented comfortably fit our family and all our luggage</p>
+                    <ul class="flex justify-center py-lg">
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                        <li><i class="fa-solid fa-star text-yellow-600"></i></li>
+                    </ul>
+                    <div class="py-3">
+                        <h1 class="text-black text-xl font-bold text-center group-hover/clientCard:text-white">Kyle
+                            Roberts DVM</h1>
+                        <p class="text-stone-700 justify-center text-center ">Newyork,USA
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <button
+                class=" btn mx-auto  relative overflow-hidden bg-black text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
+                <span class="relative z-10 flex items-center">
+                    View ALL
+                    <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
+                </span>
+            </button>
+        </div>
+             
+        <!-- company coursel -->
+         <div class="py-10 px-15">
+            <div class="swiper companySwiper ">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/company-coursel/client-01.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-02.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-03.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-04.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-05.svg"></div>
+     <div class="swiper-slide"><img src="img/company-coursel/client-01.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-02.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-03.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-04.svg"></div>
+      <div class="swiper-slide"><img src="img/company-coursel/client-05.svg"></div>
+    </div>
+    <!-- <div class="swiper-pagination"></div> -->
+  </div>
+         </div>
+
+         <!-- Best Pricing in Rental -->
+           <div class="">
+              <div class="text-center mt-20 mb-10">
+                <h3 class="text-4xl font-bold text-black dark:text-stone-400 pt-5">Best Pricing in Rental</h3>
+                <div class="flex  mt-4  relative">
+                    <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-115 bottom-5">
+                    <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-115 bottom-5">
+                </div>
+                <p class="text-gray-500 dark:text-gray-300  text-lg mx-auto max-w-2xl">
+                  Choose the Right Plan for Your Business</p>
+            </div>
+
+           </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                loop: true,
+
+                speed: 4000, // jitni zyada value, utna smooth & slow
+                autoplay: {
+                    delay: 0, // 🔥 no gap between slides
+                    disableOnInteraction: false,
+                },
+
+                freeMode: true,
+                freeModeMomentum: false,
+
+                grabCursor: true,
+            });
+
+        </script>
+        <!-- company-coursel -->
+           <script>
+    var swiper = new Swiper(".companySwiper", {
+      slidesPerView: 6,
+      spaceBetween: 30,
+      loop:true,
+       speed: 2000, // jitni zyada value, utna smooth & slow
+                autoplay: {
+                    delay: 3000, // 🔥 no gap between slides
+                    disableOnInteraction: false,
+                },
+
+                freeMode: true,
+                freeModeMomentum: false,
+
+                grabCursor: true,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+        <script>
+            var swiper = new Swiper(".carSwiper", {
+                slidesPerView: 1,
+                // spaceBetween: 30,
+                loop: true,
+
+                speed: 4000, // jitni zyada value, utna smooth & slow
+                autoplay: {
+                    delay: 3000, // 🔥 no gap between slides
+                    disableOnInteraction: false,
+                },
+
+                freeMode: true,
+                freeModeMomentum: false,
+
+                grabCursor: true,
+            });
+
+        </script>
+
+        <!-- tailwind js-->
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <script>
+            // Dropdown functionality
+            document.getElementById('home').addEventListener('click', function () {
+                var dropdown = document.getElementById('home-dropdown');
+                var arrow = document.getElementById('home-arrow');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                } else {
+                    dropdown.style.display = 'block';
+                }
+
+                // Toggle arrow direction
+                if (arrow.textContent === '>') {
+                    arrow.textContent = 'v';
+                } else {
+                    arrow.textContent = '>';
+                }
+            });
+
+        </script>
+
 </body>
 
 </html>
