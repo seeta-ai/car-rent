@@ -70,32 +70,71 @@
                             <li><a class="text-black" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="text-white hover:text-yellow-600">Listing</li>
-                    <li class="text-white hover:text-yellow-600">page</li>
-                    <li class="text-white hover:text-yellow-600">Blog</li>
+                    <li id="menuBtn" class="text-white px-4  font-medium hover:text-yellow-600">>Listing
+                        <div class="relative inline-block">
+
+                            <div id="menu" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                                <a href="/listing-grid"
+                                    class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing Grid
+                                </a>
+                                <a href="/listing-list"
+                                    class="block px-4 py-2 text-gray-700  hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing List
+                                </a>
+                                <a href="/listing-map"
+                                    class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing With Map
+                                </a>
+                                <a href="/listing-details"
+                                    class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing Details
+                                </a>
+                            </div>
+                        </div>
+
+                    </li>
+
+                   <li class="text-white hover:text-yellow-600">pages</li>
+                    <li id="menuBtn2" class="text-white px-4  font-medium hover:text-yellow-600">>blog
+                        <div class="relative inline-block">
+
+                            <div id="menu2" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                                <a href="/listing-grid"
+                                    class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing Grid
+                                </a>
+                                <a href="/listing-list"
+                                    class="block px-4 py-2 text-gray-700  hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
+                                    Listing List
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                    </li>
+
                     <li class="text-white hover:text-yellow-600">Dashboard</li>
                 </ul>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-4 lg:mt-2">
-                                
-                             <button
-                                    class=" btn relative overflow-hidden bg-stone-800 text-white font-bold xl:px-5 xl:py-3 rounded-lg border-2 border-black group  flex mb-4">
-                                    <span class="relative z-10 flex items-center text-lg">
-                                        Sign In
-                                      
-                                         <i
-                            class="fa-regular fa-user mx-1"></i>
-                                    </span>
-                                </button>
-                           <!-- 2nd-btn -->
-                             <button
-                                    class=" btn  relative overflow-hidden bg-yellow-600 text-white font-bold xl:px-5 xl:py-3 rounded-lg border-2 border-black group  flex mb-4">
-                                    <span class="relative z-10 flex items-center text-lg">
-                                        Sign Up
-                                        
-                                         <i
-                            class="fa-solid fa-lock mx-1"></i>
-                                    </span>
-                                </button>
+
+                    <button
+                        class=" btn relative overflow-hidden bg-stone-800 text-white font-bold xl:px-5 xl:py-3 rounded-lg border-2 border-black group  flex mb-4">
+                        <span class="relative z-10 flex items-center text-lg">
+                            Sign In
+
+                            <i class="fa-regular fa-user mx-1"></i>
+                        </span>
+                    </button>
+                    <!-- 2nd-btn -->
+                    <button
+                        class=" btn  relative overflow-hidden bg-yellow-600 text-white font-bold xl:px-5 xl:py-3 rounded-lg border-2 border-black group  flex mb-4">
+                        <span class="relative z-10 flex items-center text-lg">
+                            Sign Up
+
+                            <i class="fa-solid fa-lock mx-1"></i>
+                        </span>
+                    </button>
 
                 </div>
             </nav>
@@ -2345,12 +2384,12 @@
             </svg>
 
             <span class="absolute inset-0 flex items-center justify-center text-amber-500 text-xl font-extrabold">
-               <i class="fa-solid fa-arrow-up "></i>
-            </span> 
-            
+                <i class="fa-solid fa-arrow-up "></i>
+            </span>
+
         </div>
         <!-- scrollbar button end -->
-            
+
 
 
         <!-- Swiper JS -->
@@ -2452,6 +2491,8 @@
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
+
+
         <!-- Initialize Swiper -->
         <script>
             var swiper = new Swiper(".mySwiper", {
@@ -2539,6 +2580,62 @@
             });
 
         </script>
+
+        <!-- listings btn -->
+        <script>
+            const menuBtn = document.getElementById("menuBtn");
+            const menu = document.getElementById("menu");
+
+            // Hover open
+            menuBtn.addEventListener("mouseenter", () => {
+                menu.classList.remove("hidden");
+            });
+
+            menuBtn.addEventListener("mouseleave", () => {
+                setTimeout(() => menu.classList.add("hidden"), 150);
+            });
+
+            menu.addEventListener("mouseenter", () => {
+                menu.classList.remove("hidden");
+            });
+
+            menu.addEventListener("mouseleave", () => {
+                menu.classList.add("hidden");
+            });
+
+            // Click toggle (optional)
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+           
+           <!-- blogs dropdown js -->
+        <script>
+            const menuBtn2 = document.getElementById("menuBtn2");
+            const menu2 = document.getElementById("menu2");
+
+            // Hover open
+            menuBtn2.addEventListener("mouseenter", () => {
+                menu2.classList.remove("hidden");
+            });
+
+            menuBtn2.addEventListener("mouseleave", () => {
+                setTimeout(() => menu2.classList.add("hidden"), 150);
+            });
+
+            menu2.addEventListener("mouseenter", () => {
+                menu2.classList.remove("hidden");
+            });
+
+            menu2.addEventListener("mouseleave", () => {
+                menu2.classList.add("hidden");
+            });
+
+            // Click toggle (optional)
+            btn2.addEventListener("click", () => {
+                menu2.classList.toggle("hidden");
+            });
+            </script>
 
 </body>
 
