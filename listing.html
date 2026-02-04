@@ -36,7 +36,7 @@
 
 <body>
     <!-- listing grid -->
-    <section class="bg-black w-[1380px] h-100 text-white py-10">
+    <section class="bg-black w-full h-100 text-white py-10">
         <div class="max-w-6xl mx-auto px-4">
             <div class=" mb-8 text-center ">
                 <h1 class="text-5xl text-white font-extrabold">Car Listings</h1>
@@ -293,7 +293,67 @@
 
                 </div>
                 <!-- car colum -->
-                <div class="">
+                <div class="mt-4">
+                    <div class="max-w-sm bg-white rounded-xl shadow-lg overflow-hidden bg-white px-5 py-5 ">
+                        <!-- Image Section -->
+                        <div class="relative">
+                            <img src="img/car-listing/car-01.jpg" alt="Toyota Camry"
+                                class="w-full h-48  object-cover text-items-center rounded-lg" />
+
+                            <!-- Featured Badge -->
+                            <span
+                                class="absolute top-0 -left-26 bg-red-500 text-white text-xs font-semibold   px-30 py-1 rotate-[-45deg] origin-top-left-[40px] shadow-lg">
+                                Featured
+                            </span>
+
+                            <!-- Favorite Icon -->
+                            <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow">
+                                ❤️
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Toyota Camry SE 350</h3>
+
+                            <!-- Rating -->
+                            <div class="flex items-center text-sm text-gray-500 mt-1">
+                   <ul>
+                    <li><i class="fa-solid fa-star bg-yellow-600"></i></li>
+                    <li><i class="fa-solid fa-star bg-yellow-600"></i></li>
+                    <li><i class="fa-solid fa-star bg-yellow-600"></i></li>
+                    <li><i class="fa-solid fa-star bg-yellow-600"></i></li>
+                    <li><i class="fa-regular fa-star"></i></li>
+                    <li></li>
+                   </ul>
+                                <span class="ml-2">(4.0) 138 Reviews</span>
+                            </div>
+
+                            <!-- Specs -->
+                            <div class="grid grid-cols-3 gap-3 text-xs text-gray-600 mt-4">
+                                <div>🚗 Auto</div>
+                                <div>⛽ Petrol</div>
+                                <div>📅 2018</div>
+                                <div>🛣️ 10 KM</div>
+                                <div>👥 5 Persons</div>
+                                <div>⚡ Power</div>
+                            </div>
+
+                            <!-- Location & Price -->
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-sm text-gray-500">📍 Washington</span>
+                                <span class="text-xl font-bold text-red-500">$160<span
+                                        class="text-sm text-gray-500">/Day</span></span>
+                            </div>
+
+                            <!-- Button -->
+                            <button
+                                class="w-full mt-4 bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+                                Rent Now
+                            </button>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
