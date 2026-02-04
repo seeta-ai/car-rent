@@ -73,7 +73,8 @@
                     <li id="menuBtn" class="text-white px-4  font-medium hover:text-yellow-600">>Listing
                         <div class="relative inline-block">
 
-                            <div id="menu" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                            <div id="menu"
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b">
                                 <a href="listing.html"
                                     class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing Grid
@@ -95,11 +96,12 @@
 
                     </li>
 
-                   <li class="text-white hover:text-yellow-600">pages</li>
+                    <li class="text-white hover:text-yellow-600">pages</li>
                     <li id="menuBtn2" class="text-white px-4  font-medium hover:text-yellow-600">>blog
                         <div class="relative inline-block">
 
-                            <div id="menu2" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                            <div id="menu2"
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b">
                                 <a href="/listing-grid"
                                     class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing Grid
@@ -108,7 +110,7 @@
                                     class="block px-4 py-2 text-gray-700  hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing List
                                 </a>
-                               
+
                             </div>
                         </div>
 
@@ -1259,266 +1261,313 @@
             </div>
         </div>
 
+
+
+
         <!-- car-coursel -->
-        <div class="">
+
+        <div class="w-full relative">
 
             <div
-                class="bg-[url(img/car-coursel/popular-bg.png)] relative bg-bottom bg-right bg-stone-200 py-50 w-full bg-no-repeat">
-                <div class="text-center mt-20 mb-10">
-                    <h3 class="text-4xl font-bold text-black dark:text-stone-400 pt-5">Popular Cars On Recommendations
+                class="bg-[url(img/car-coursel/popular-bg.png)] relative bg-bottom bg-right bg-stone-200 py-20 w-full bg-no-repeat overflow-hidden">
+
+                <!-- Heading -->
+                <div class="text-center mt-20 mb-10 relative z-10">
+                    <h3 class="text-4xl font-bold text-black pt-5">
+                        Popular Cars On Recommendations
                     </h3>
-                    <div class="flex  mt-4  relative">
-                        <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-88 bottom-5">
-                        <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-88 bottom-5">
+
+                    <div class="flex mt-4 relative justify-center">
+                        <img src="img/feature-icon/star-1.svg" alt="" class="absolute left-1/4 bottom-1">
+                        <img src="img/feature-icon/star-2.svg" alt="" class="absolute right-1/4 bottom-1">
                     </div>
-                    <p class="text-gray-500 dark:text-gray-300  text-xl mx-auto max-w-2xl">
+
+                    <p class="text-gray-500 text-xl mx-auto max-w-2xl mt-4">
                         Here are some versatile options that cater to different needs
                     </p>
-
                 </div>
 
-                <div class="swiper carSwiper">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper w-full" style="transition-timing-function: linear !important;">
-                        <!-- Slides -->
-                        <div class="w-full swiper-slide custom-swiper-slider flex flex-col items-center">
-                            <div class="text-stone-400 text-center">
-                                <h3 class="text-2xl">AUDI0</h3>
+
+                <!-- Swiper -->
+                <div class="swiper carSwiper w-full relative z-10 ">
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide flex flex-col items-center text-center">
+
+                            <div class="text-stone-400 mb-6">
+                                <h3 class="text-2xl">AUDI</h3>
                                 <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
                             </div>
-                            <div class="mx-auto">
-                                <img src="img/nunber-car/car-1.png" class="items-center" class="relative">
-                                <div
-                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
 
-                                    <span
-                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+                            <div class="relative flex justify-center mb-10">
+                                <img src="img/nunber-car/car-1.png" class="mx-auto">
 
-                                        <p class="text-white font-bold  text-sm">Starts From</p>
-                                        <h6 class="text-white font-bold text-[18px]">$650<span
-                                                class="text-stone-400 text-sm">
-                                                /day</span>
-                                        </h6>
-                                    </span>
+                                <!-- Price Badge -->
+                                <div class="absolute left-1/2 -translate-x-1/2 bottom-15  translate-y-1/2">
+                                    <div class="bg-sky-500/75 w-28 h-28 rounded-full flex items-center justify-center">
+                                        <div
+                                            class="bg-sky-500 w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                                            <p class="text-white text-sm font-bold">Starts From</p>
+                                            <h6 class="text-white font-bold text-lg">
+                                                $650 <span class="text-stone-200 text-sm">/day</span>
+                                            </h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mx-auto">
-                                <ul class="flex justify-content-evenly gap-2 ">
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                </ul>
-                                <button
-                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
-                                    <span class="relative z-10 flex items-center">
-                                        View ALL
-                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
-                                    </span>
-                                </button>
-                            </div>
+
+                            <!-- Specs -->
+                            <ul class="flex flex-wrap justify-center gap-3 mb-6 mt-6">
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Auto</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Diesel</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+                            </ul>
+
+                            <!-- Button -->
+                            <button
+                                class="bg-yellow-600 text-white font-bold px-5 py-2 rounded-lg border-2 border-black flex items-center gap-2 mb-10 mx-auto">
+                                View All
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+
                         </div>
-                        <!-- 2nd-car-coursel -->
-                        <div class=" max-auto swiper-slide">
-                            <div class="text-stone-400 text-center">
-                                <h3 class="text-2xl">AUDI0</h3>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide flex flex-col items-center text-center">
+
+                            <div class="text-stone-400 mb-6">
+                                <h3 class="text-2xl">AUDI</h3>
                                 <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
                             </div>
-                            <div class="">
-                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
-                                <div
-                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
 
-                                    <span
-                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+                            <div class="relative flex justify-center mb-10">
+                                <img src="img/nunber-car/car-2.png" class="mx-auto">
 
-                                        <p class="text-white font-bold  text-sm">Starts From</p>
-                                        <h6 class="text-white font-bold text-[18px]">$650<span
-                                                class="text-stone-400 text-sm">
-                                                /day</span>
-                                        </h6>
-                                    </span>
+                                <!-- Price Badge -->
+                                <div class="absolute left-1/2 -translate-x-1/2 bottom-15  translate-y-1/2">
+                                    <div class="bg-sky-500/75 w-28 h-28 rounded-full flex items-center justify-center">
+                                        <div
+                                            class="bg-sky-500 w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                                            <p class="text-white text-sm font-bold">Starts From</p>
+                                            <h6 class="text-white font-bold text-lg">
+                                                $650 <span class="text-stone-200 text-sm">/day</span>
+                                            </h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class=" ">
-                                <ul class="flex justify-content-evenly gap-2 ">
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                </ul>
-                                <button
-                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
-                                    <span class="relative z-10 flex items-center">
-                                        View ALL
-                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
-                                    </span>
-                                </button>
-                            </div>
+
+                            <!-- Specs -->
+                            <ul class="flex flex-wrap justify-center gap-3 mb-6 mt-6">
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Auto</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Diesel</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+                            </ul>
+
+                            <!-- Button -->
+                            <button
+                                class="bg-yellow-600 text-white font-bold px-5 py-2 rounded-lg border-2 border-black flex items-center gap-2 mb-10 mx-auto">
+                                View All
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+
                         </div>
-                        <!-- 3rd-card-coursel -->
-                        <div class=" max-auto swiper-slide">
-                            <div class="text-stone-400 text-center">
-                                <h3 class="text-2xl">AUDI0</h3>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide flex flex-col items-center text-center">
+
+                            <div class="text-stone-400 mb-6">
+                                <h3 class="text-2xl">AUDI</h3>
                                 <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
                             </div>
-                            <div class="">
-                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
-                                <div
-                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
 
-                                    <span
-                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+                            <div class="relative flex justify-center mb-10">
+                                <img src="img/nunber-car/car-3.png" class="mx-auto">
 
-                                        <p class="text-white font-bold  text-sm">Starts From</p>
-                                        <h6 class="text-white font-bold text-[18px]">$650<span
-                                                class="text-stone-400 text-sm">
-                                                /day</span>
-                                        </h6>
-                                    </span>
+                                <!-- Price Badge -->
+                                <div class="absolute left-1/2 -translate-x-1/2 bottom-15  translate-y-1/2">
+                                    <div class="bg-sky-500/75 w-28 h-28 rounded-full flex items-center justify-center">
+                                        <div
+                                            class="bg-sky-500 w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                                            <p class="text-white text-sm font-bold">Starts From</p>
+                                            <h6 class="text-white font-bold text-lg">
+                                                $650 <span class="text-stone-200 text-sm">/day</span>
+                                            </h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class=" ">
-                                <ul class="flex justify-content-evenly gap-2 ">
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                </ul>
-                                <button
-                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
-                                    <span class="relative z-10 flex items-center">
-                                        View ALL
-                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
-                                    </span>
-                                </button>
-                            </div>
+
+                            <!-- Specs -->
+                            <ul class="flex flex-wrap justify-center gap-3 mb-6 mt-6">
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Auto</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Diesel</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+                            </ul>
+
+                            <!-- Button -->
+                            <button
+                                class="bg-yellow-600 text-white font-bold px-5 py-2 rounded-lg border-2 border-black flex items-center gap-2 mb-10 mx-auto">
+                                View All
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+
                         </div>
-                        <!-- 4th-card-coursel -->
-                        <div class=" max-auto swiper-slide">
-                            <div class="text-stone-400 text-center">
-                                <h3 class="text-2xl">AUDI0</h3>
+                        <!-- slide-4 -->
+                        <div class="swiper-slide flex flex-col items-center text-center">
+
+                            <div class="text-stone-400 mb-6">
+                                <h3 class="text-2xl">AUDI</h3>
                                 <h1 class="text-5xl font-bold">A3 2024 NEW</h1>
                             </div>
-                            <div class="">
-                                <img src="img/nunber-car/car-1.png" class="items-center max-auto" class="relative">
-                                <div
-                                    class="size-full absolute  rounded-full bg-sky-500/75 w-25 h-25 top-80 right-[900px] flex flex-col justify-center items-center">
 
-                                    <span
-                                        class="  bg-sky-500/100 w-20 h-20 rounded-full flex flex-col justify-center items-center ">
+                            <div class="relative flex justify-center mb-10">
+                                <img src="img/nunber-car/car-4.png" class="mx-auto">
 
-                                        <p class="text-white font-bold  text-sm">Starts From</p>
-                                        <h6 class="text-white font-bold text-[18px]">$650<span
-                                                class="text-stone-400 text-sm">
-                                                /day</span>
-                                        </h6>
-                                    </span>
+                                <!-- Price Badge -->
+                                <div class="absolute left-1/2 -translate-x-1/2 bottom-15  translate-y-1/2">
+                                    <div class="bg-sky-500/75 w-28 h-28 rounded-full flex items-center justify-center">
+                                        <div
+                                            class="bg-sky-500 w-20 h-20 rounded-full flex flex-col items-center justify-center">
+                                            <p class="text-white text-sm font-bold">Starts From</p>
+                                            <h6 class="text-white font-bold text-lg">
+                                                $650 <span class="text-stone-200 text-sm">/day</span>
+                                            </h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class=" ">
-                                <ul class="flex justify-content-evenly gap-2 ">
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                    <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1">
-                                        <img src="img/coursel-icone/spec-01.svg" class="text-white">
-                                        <p class="text-white">Auto</p>
-                                    </li>
-                                </ul>
-                                <button
-                                    class=" btn mx-auto relative overflow-hidden bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg border-2 border-black group mx-auto flex mb-4">
-                                    <span class="relative z-10 flex items-center">
-                                        View ALL
-                                        <i class="fa-solid fa-arrow-right text-[10px] ms-1"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
 
-                        <!-- ------ -->
+                            <!-- Specs -->
+                            <ul class="flex flex-wrap justify-center gap-3 mb-6 mt-6">
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Auto</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">Diesel</p>
+                                </li>
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+
+                                <li class="bg-stone-700 py-1 px-5 rounded-full flex gap-1 items-center">
+                                    <img src="img/coursel-icone/spec-01.svg">
+                                    <p class="text-white">5 Seats</p>
+                                </li>
+                            </ul>
+
+                            <!-- Button -->
+                            <button
+                                class="bg-yellow-600 text-white font-bold px-5 py-2 rounded-lg border-2 border-black flex items-center gap-2 mb-10 mx-auto">
+                                View All
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
-                <div class="bg-black h-80 w-full absolute bottom-0"></div>
+
+                <!-- Bottom Black Shape -->
+                <div class="bg-black h-80 w-full absolute bottom-0 left-0"></div>
+
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- Our Clients Feedback -->
@@ -2448,7 +2497,6 @@
                 grabCursor: true,
             });
         </script>
-        </script>
         <!-- car category js -->
         <script>
             const toggleBtn = document.getElementById("toggleBtn");
@@ -2539,21 +2587,13 @@
         <script>
             var swiper = new Swiper(".carSwiper", {
                 slidesPerView: 1,
-                // spaceBetween: 30,
+                spaceBetween: 50,
+                centeredSlides: true,
                 loop: true,
-
-                speed: 4000, // jitni zyada value, utna smooth & slow
-                autoplay: {
-                    delay: 3000, // 🔥 no gap between slides
-                    disableOnInteraction: false,
-                },
-
-                freeMode: true,
-                freeModeMomentum: false,
-
-                grabCursor: true,
+                // grabCursor: true,
             });
         </script>
+
 
         <!-- tailwind js-->
 
@@ -2607,8 +2647,8 @@
                 menu.classList.toggle("hidden");
             });
         </script>
-           
-           <!-- blogs dropdown js -->
+
+        <!-- blogs dropdown js -->
         <script>
             const menuBtn2 = document.getElementById("menuBtn2");
             const menu2 = document.getElementById("menu2");
@@ -2634,7 +2674,7 @@
             btn2.addEventListener("click", () => {
                 menu2.classList.toggle("hidden");
             });
-            </script>
+        </script>
 
 </body>
 
