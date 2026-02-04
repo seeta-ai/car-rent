@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- swipper-js -->
+
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <!-- font-aswesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -73,7 +74,8 @@
                     <li id="menuBtn" class="text-white px-4  font-medium hover:text-yellow-600">>Listing
                         <div class="relative inline-block">
 
-                            <div id="menu" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                            <div id="menu"
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b">
                                 <a href="listing.html"
                                     class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing Grid
@@ -95,11 +97,12 @@
 
                     </li>
 
-                   <li class="text-white hover:text-yellow-600">pages</li>
+                    <li class="text-white hover:text-yellow-600">pages</li>
                     <li id="menuBtn2" class="text-white px-4  font-medium hover:text-yellow-600">>blog
                         <div class="relative inline-block">
 
-                            <div id="menu2" class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b"> 
+                            <div id="menu2"
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden  border-t-3 border-yellow-500 border-b">
                                 <a href="/listing-grid"
                                     class="block px-4 py-2 text-gray-700 hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing Grid
@@ -108,7 +111,7 @@
                                     class="block px-4 py-2 text-gray-700  hover:translate-x-2 duration-300 ease-in-out hover:text-yellow-600">
                                     Listing List
                                 </a>
-                               
+
                             </div>
                         </div>
 
@@ -1277,6 +1280,7 @@
 
                 </div>
 
+
                 <div class="swiper carSwiper">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper w-full" style="transition-timing-function: linear !important;">
@@ -1516,6 +1520,7 @@
                         <!-- ------ -->
                     </div>
                 </div>
+
                 <div class="bg-black h-80 w-full absolute bottom-0"></div>
             </div>
         </div>
@@ -2394,6 +2399,13 @@
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
+        <!-- tailwind cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+
+
+
         <!-- scrollbar button  -->
         <script>
             const btn = document.getElementById("scrollTopBtn");
@@ -2448,7 +2460,6 @@
                 grabCursor: true,
             });
         </script>
-        </script>
         <!-- car category js -->
         <script>
             const toggleBtn = document.getElementById("toggleBtn");
@@ -2484,11 +2495,6 @@
 
 
 
-
-
-
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
 
 
@@ -2537,28 +2543,27 @@
         </script>
         <!-- car-coursel js -->
         <script>
-            var swiper = new Swiper(".carSwiper", {
-                slidesPerView: 1,
-                // spaceBetween: 30,
-                loop: true,
+            document.addEventListener("DOMContentLoaded", function () {
+                new Swiper(".carSwiper", {
+                    slidesPerView: 1,
+                    loop: true,
 
-                speed: 4000, // jitni zyada value, utna smooth & slow
-                autoplay: {
-                    delay: 3000, // 🔥 no gap between slides
-                    disableOnInteraction: false,
-                },
+                    speed: 4000,
+                    autoplay: {
+                        delay: 0, // nonstop
+                        disableOnInteraction: false,
+                    },
 
-                freeMode: true,
-                freeModeMomentum: false,
+                    freeMode: true,
+                    freeModeMomentum: false,
 
-                grabCursor: true,
+                    grabCursor: true,
+                });
             });
-
         </script>
+        <!-- car-coursel js end-->
 
-        <!-- tailwind js-->
-
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- tailwind js -->
 
         <script>
             // Dropdown functionality
@@ -2608,8 +2613,8 @@
                 menu.classList.toggle("hidden");
             });
         </script>
-           
-           <!-- blogs dropdown js -->
+
+        <!-- blogs dropdown js -->
         <script>
             const menuBtn2 = document.getElementById("menuBtn2");
             const menu2 = document.getElementById("menu2");
@@ -2635,7 +2640,7 @@
             btn2.addEventListener("click", () => {
                 menu2.classList.toggle("hidden");
             });
-            </script>
+        </script>
 
 </body>
 
