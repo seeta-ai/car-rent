@@ -37,9 +37,9 @@
 <body>
     <!-- listing grid -->
     <section class="bg-black w-full h-100 text-white py-10">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class=" mx-auto px-4">
             <div class=" mb-8 text-center ">
-                <h1 class="text-5xl text-white font-extrabold">Car Listings</h1>
+                <h1 class="lg:text-5xl text-white font-extrabold">Car Listings</h1>
             </div>
             <div class="">
                 <ul class="flex gap-2 justify-center">
@@ -120,6 +120,7 @@
                     </button>
                 </div>
             </div>
+
             <div class="grid grid-flow-col grid-rows-1 gap-4 mt-8">
                 <div class="text-2xl font-bold flex items-center">
                     Showing 1-9 of 154 Cars
@@ -187,8 +188,8 @@
             </div>
 
             <!-- You Looking For -->
-            <div class="grid grid-cols-2">
-                <div class="max-w-6xl mx-auto px-4 mt-10">
+            <div class="grid grid-cols-12 gap-6 mt-10">
+                <div class="max-w-6xl mx-auto px-4 mt-10 col-span-4">
                     <div class="text-center mb-10">
                         <h2 class="text-2xl font-extrabold text-black">What Are You Looking For</h2>
                         <i class="fa-brands fa-searchengin text-2xl text-gray-400 ms-43 mt-5 text-3xl"></i>
@@ -293,117 +294,357 @@
 
                 </div>
                 <!-- car colum -->
-                <div class="grid   ">
-                    <!-- card-1 -->
+                <div class="grid col-span-8">
+                    <div class="flex flex-wrap gap-4">
+                        <!-- card-1 -->
 
-                    <div class="mt-4 group/card ">
-                        <div class="max-w-sm bg-white rounded-xl shadow-lg  bg-white px-5 py-5 relative ">
-                            <!-- <span
+
+                        <div class="mt-4 group/card overflow-hidden ">
+                            <div class="max-w-sm bg-white rounded-xl shadow-lg  bg-white  py-5 relative ">
+                                <!-- <span
                                     class="absolute top-5 -left-40 z-5 bg-red-500 text-white text-xs font-semibold    px-40 py-xl rotate-[-45deg] mt-10 origin-top-left-[50px] shadow-lg">
                                     Featured
                                 </span> -->
-                            <span
-                                class="absolute top-5 left-10 bg-red-500 text-white text-xs font-semibold px-25 z-5 py-1 rotate-[-45deg] origin-top-left-1">
-                                Featured
-                            </span>
-                            <!-- Image Section -->
-                            <div class="relative overflow-hidden rounded-lg ">
-                                <img src="img/car-listing/car-01.jpg" alt="Toyota Camry"
-                                    class="  w-full h-65  object-cover text-items-center rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
+                                <span
+                                    class="absolute top-20 -left-25 bg-red-500 text-white text-xs font-semibold px-30 z-5 py-1 -mt-2 rotate-[-45deg]">
+                                    Featured
+                                </span>
+                                <!-- Image Section -->
+                                <div class="relative overflow-hidden rounded-lg ">
+                                    <img src="img/car-listing/car-01.jpg" alt="Toyota Camry"
+                                        class="  w-full h-65  object-cover text-items-center rounded-lg group-hover/card:scale-110 transition duration-500 ease-in-out">
 
 
-                                <div class=" absolute right-10 -bottom-6 ">
+                                    <!-- <div class=" absolute right-10 -bottom-6 ">
                                     <img src="img/map/avatar-04.jpg"
-                                        class="rounded-full w-11 h-11  border-3 border-white">
+                                        class="rounded-full w-11 h-11  border-3 border-white ">
+                                </div> -->
+
+                                    <!-- tag2-img -->
+                                    <div
+                                        class=" absolute bg-white  py-0.5 px-1 rounded-lg right-70 bottom-5 text-items-center text-black font-medium">
+                                        Audio
+                                    </div>
+
+                                    <!-- Featured Badge -->
+
+
+                                    <!-- Favorite Icon -->
+                                    <div class="absolute top-3 right-3 bg-white rounded-full py-1 px-1.5 shadow">
+                                        <button class="text-stone-400  rounded-full bg-white ">
+                                            <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
+                                            <i class="fa-regular fa-heart text-gray-300 text-lg "></i>
+                                        </button>
+
+                                    </div>
                                 </div>
+                                <!-- profile -->
 
-                                <!-- tag2-img -->
-                                <div
-                                    class=" absolute bg-white  py-0.5 px-1 rounded-lg right-70 bottom-5 text-items-center text-black font-medium">
-                                    Audio
-                                </div>
+                                <!-- Content -->
+                                <div class="p-4 relative">
+                                    <h3 class="text-lg font-semibold">Toyota Camry SE 350</h3>
 
-                                <!-- Featured Badge -->
+                                    <!-- Rating -->
+                                    <div class="flex items-center text-sm text-gray-500 mt-1">
+                                        <ul class="flex gap-1">
+                                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                                            <li><i class="fa-regular fa-star text-yellow-500"></i></li>
+                                            <li></li>
+                                        </ul>
+                                        <span class="ml-2 ">(4.0) 138 </span>
+                                    </div class="flex  ">
+                                    <div class=" flex justify-content-end gap-45 border-b-1 border-gray-200 ">
+                                        <h2 class="text-lg font-medium mb-2 text-gray-600">Reviews</h2>
+                                        <span class="bg-[#127384] rounded-lg  flex items-center mb-3 ">
+                                            <h6 class="text-white font-medium flex gap-1 px-2"><img
+                                                    src="img/map/map-pin.svg">3.2m</h6>
+                                        </span>
+                                    </div>
 
 
-                                <!-- Favorite Icon -->
-                                <div class="absolute top-3 right-3 bg-white rounded-full py-1 px-1.5 shadow">
-                                    <button class="text-stone-400  rounded-full bg-white ">
-                                        <!-- <i class=" fa-solid fa-heart text-black border-2 text-[13px]"></i> -->
-                                        <i class="fa-regular fa-heart text-gray-300 text-lg "></i>
+                                    <!-- Specs -->
+                                    <div class="grid grid-cols-3 gap-3 text-xs text-gray-600 mt-4 ">
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
+                                                src="img/map/car-parts-01.svg " class="text-[20px] "> Auto</div>
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
+                                                src="img/map/car-parts-02.svg" class="text-[20px]"> Petrol</div>
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
+                                                src="img/map/car-parts-03.svg" class="text-[20px]">2018</div>
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
+                                                src="img/map/car-parts-04.svg" class="text-[1px]">
+                                            10 KM</div>
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
+                                                src="img/map/car-parts-05.svg" class="text-[10px]">5 Persons</div>
+                                        <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
+                                                src="img/map/car-parts-06.svg" class="text-[20px]">
+                                            Power</div>
+                                    </div>
+
+                                    <!-- Location & Price -->
+                                    <div class="flex justify-between items-center mt-4 bg-[#F2F7F6] py-2 px-3">
+                                        <span class="text-lg text-gray-500"><i
+                                                class="fa-solid fa-location-dot text-lg text-gray-500"></i>
+                                            Washington</span>
+                                        <span class="text-2xl font-bold text-red-500">$160<span
+                                                class="text-lg text-gray-500">/Day</span></span>
+                                    </div>
+
+                                    <!-- Button -->
+                                    <button
+                                        class="w-full mt-4 bg-black text-white font-medium text-lg py-2 rounded-lg hover:bg-[#127384] transition">
+                                        <i class="fa-regular fa-calendar text-white font-medium text-lg"></i> Rent Now
                                     </button>
 
                                 </div>
+                                <!-- avater -->
+                                <div class=" absolute right-10 bottom-80 ">
+                                    <img src="img/map/avatar-04.jpg"
+                                        class="rounded-full w-11 h-11  border-3 border-white ">
+                                </div>
                             </div>
-                            <!-- profile -->
 
-                            <!-- Content -->
-                            <div class="p-4 ">
-                                <h3 class="text-lg font-semibold">Toyota Camry SE 350</h3>
+                            <!-- 2nd-card -->
 
-                                <!-- Rating -->
-                                <div class="flex items-center text-sm text-gray-500 mt-1">
-                                    <ul class="flex gap-1">
-                                        <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                                        <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                                        <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                                        <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                                        <li><i class="fa-regular fa-star text-yellow-500"></i></li>
-                                        <li></li>
-                                    </ul>
-                                    <span class="ml-2 ">(4.0) 138 </span>
-                                </div class="flex  ">
-                                <div class=" flex justify-content-end gap-45 border-b-1 border-gray-200 ">
-                                    <h2 class="text-lg font-medium mb-2 text-gray-600">Reviews</h2>
-                                    <span class="bg-[#127384] rounded-lg  flex items-center mb-3 ">
-                                        <h6 class="text-white font-medium flex gap-1 px-2"><img
-                                                src="img/map/map-pin.svg">3.2m</h6>
-                                    </span>
-                                </div>
+                            <!-- ------ -->
 
-
-                                <!-- Specs -->
-                                <div class="grid grid-cols-3 gap-3 text-xs text-gray-600 mt-4 ">
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
-                                            src="img/map/car-parts-01.svg " class="text-[20px] "> Auto</div>
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
-                                            src="img/map/car-parts-02.svg" class="text-[20px]"> Petrol</div>
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
-                                            src="img/map/car-parts-03.svg" class="text-[20px]">2018</div>
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
-                                            src="img/map/car-parts-04.svg" class="text-[1px]">
-                                        10 KM</div>
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[15px]"><img
-                                            src="img/map/car-parts-05.svg" class="text-[10px]">5 Persons</div>
-                                    <div class="font-medium text-gray-400 flex gap-1 text-[17px]"><img
-                                            src="img/map/car-parts-06.svg" class="text-[20px]">
-                                        Power</div>
-                                </div>
-
-                                <!-- Location & Price -->
-                                <div class="flex justify-between items-center mt-4 bg-[#F2F7F6] py-2 px-3">
-                                    <span class="text-lg text-gray-500"><i
-                                            class="fa-solid fa-location-dot text-lg text-gray-500"></i>
-                                        Washington</span>
-                                    <span class="text-2xl font-bold text-red-500">$160<span
-                                            class="text-lg text-gray-500">/Day</span></span>
-                                </div>
-
-                                <!-- Button -->
-                                <button
-                                    class="w-full mt-4 bg-black text-white font-medium text-lg py-2 rounded-lg hover:bg-gray-800 transition">
-                                    <i class="fa-regular fa-calendar text-white font-medium text-lg"></i> Rent Now
-                                </button>
-
-                            </div>
                         </div>
-
-
                     </div>
+                    <!-- 2nd-card -->
+
+                    <!-- ----- -->
                 </div>
             </div>
         </div>
 
+
+        <!-- footer section -->
+        <div class="relative bg-[#111] h-120">
+            <footer class="bg-[#111] text-gray-400 pt-16 relative">
+                <div class="absolute bg-[url(img/Newfolder/footer-left.png)] bg-no-repeat text-[5px] text-gray-200 ">
+                </div>
+                <div class="absolute  bg-[url(img/Newfolder/footer-right.png)] bg-no-repeat text-[5px] text-gray-200">
+                </div>
+                <div class="pl-5">
+
+                    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 ">
+
+                        <!-- About Company -->
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-4 relative">
+                                About Company
+                                <span class="block w-10 h-1 bg-orange-500 mt-2"></span>
+                            </h3>
+                            <ul class="space-y-3 ">
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Deals
+                                        and
+                                        Incentive</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Shop
+                                        Toyota</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Dreamsrentals
+                                        USA</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Dreamsrentals
+                                        Worldwide</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Dreamsrental
+                                        Category</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Vehicle Types -->
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-4 relative">
+                                Vehicles Type
+                                <span class="block w-10 h-1 bg-orange-500 mt-2"></span>
+                            </h3>
+                            <ul class="space-y-3">
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">All
+                                        Vehicles
+                                        Category</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">SUVs</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Trucks</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Cars</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Crossovers</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-4 relative">
+                                Quick Links
+                                <span class="block w-10 h-1 bg-orange-500 mt-2"></span>
+                            </h3>
+                            <ul class="space-y-3">
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">My
+                                        Account</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Campaigns</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span
+                                        class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Dreamsrental
+                                        Dealers</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Deals
+                                        &
+                                        Incentives</span>
+                                </li>
+                                <li
+                                    class="flex items-center gap-2  w-fit group hover:text-yellow-600 cursor-pointer mb-5">
+                                    <span class=" group-hover:translate-x-2  duration-500 ease-in-out text-sm">Financial
+                                        Services</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-4 relative">
+                                Contact Info
+                                <span class="block w-10 h-1 bg-orange-500 mt-2"></span>
+                            </h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-[#FF9307] p-3 rounded">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-phone-call-icon lucide-phone-call text-white font-semibold ">
+                                            <path d="M13 2a9 9 0 0 1 9 9" />
+                                            <path d="M13 6a5 5 0 0 1 5 5" />
+                                            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 
+                                        2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1
+                                         1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm">+1 (888) 760 1940</span>
+                                </div>
+
+                                <div class="flex items-center gap-3">
+                                    <div class="bg-[#FF9307] p-3 rounded">
+                                        <i class="fa-regular fa-envelope text-white font-semibold text-xl"></i>
+                                    </div>
+                                    <span class="text-sm">support@example.com</span>
+                                </div>
+
+                                <!-- Email Input -->
+
+                                <div
+                                    class="flex items-center bg-white rounded-lg overflow-hidden w-90 max-w-xl relative">
+                                    <!-- Email Icon -->
+                                    <div class="px-4 text-gray-400">
+                                        <!-- Heroicon: envelope -->
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+
+                                    <!-- Input -->
+                                    <input type="email" placeholder="Enter Your Email Here"
+                                        class="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none py-3" />
+
+                                    <!-- Send Button -->
+                                    <button
+                                        class="bg-orange-400 hover:bg-orange-600 px-2 py-2 text-white transition absolute right-2 rounded-lg">
+                                        <!-- Paper plane icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-send-icon lucide-send items-center">
+                                            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 
+                                        3.18a2 2 0 0 1 1.112 1.11z" />
+                                            <path d="m21.854 2.147-10.94 10.939" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Social Icons -->
+                                <div class="flex gap-3 mt-4">
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white"><i
+                                            class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white"><i
+                                            class="fa-regular fa-camera"></i> </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white">Be</a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center text-white"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white"><i
+                                            class="fa-brands fa-linkedin"></i></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Bar -->
+                    <div class="border-t border-gray-700 mt-5"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto px-6 py-4 ">
+
+                        <div class=" text-gray-500 text-sm text-center py-4">
+                            &copy; 2024 Car Rental. All rights reserved.
+                        </div>
+                        <ul class=" gap-2 justify-center py-4 flex">
+                            <li class="bg-white rounded-lg py-1 px-3"><img src="img/footer/payment-01.svg"></li>
+                            <li class="bg-white rounded-lg py-1 px-3"><img src="img/footer/payment-02.svg"></li>
+                            <li class="bg-white  rounded-lg py-1 px-3"><img src="img/footer/master.svg"></li>
+                            <li class="bg-white  rounded-lg py-1 px-3"><img src="img/footer/payment-03.svg"></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+
+        <!-- ------ -->
 
 
 </body>
