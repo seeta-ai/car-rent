@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Tailwind Website</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: white;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease;
+      z-index: 0;
+    }
+    .btn:hover::before {
+      transform: translateY(0);
+    }
+    .btn:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+
+    <!-- Logo -->
+    <div>
+      <img src="img/logo/logo-white-01.svg" class="h-8" alt="logo">
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden lg:flex items-center gap-10 text-lg font-medium">
+      <li class="hover:text-yellow-400 cursor-pointer">Home</li>
+      <li class="relative group cursor-pointer">
+        Listing
+        <ul
+          class="absolute left-0 top-8 hidden group-hover:block bg-white text-black rounded shadow-md w-48"
+        >
+          <li class="px-4 py-2 hover:bg-gray-100">Listing 1</li>
+          <li class="px-4 py-2 hover:bg-gray-100">Listing 2</li>
+        </ul>
+      </li>
+      <li class="hover:text-yellow-400 cursor-pointer">About</li>
+      <li class="hover:text-yellow-400 cursor-pointer">Contact</li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="lg:hidden text-2xl">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-black px-6 pb-6">
+    <ul class="space-y-4 text-lg">
+      <li class="border-b pb-2">Home</li>
+      <li>
+        <details>
+          <summary class="cursor-pointer">Listing</summary>
+          <ul class="pl-4 mt-2 space-y-2 text-sm">
+            <li>Listing 1</li>
+            <li>Listing 2</li>
+          </ul>
+        </details>
+      </li>
+      <li class="border-b pb-2">About</li>
+      <li class="border-b pb-2">Contact</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section
+  class="min-h-screen flex items-center justify-center text-center px-4 bg-[url('./img/banner-img/banner-img.jpg')] bg-cover bg-center"
+>
+  <div class="max-w-3xl mt-24">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+      Build Your <span class="text-yellow-400">Dream Website</span>
+    </h1>
+    <p class="mt-6 text-gray-300 text-sm sm:text-base md:text-lg">
+      Fully responsive Tailwind CSS website with modern UI and smooth layout.
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <button
+        class="btn relative overflow-hidden px-8 py-3 bg-yellow-400 text-black font-semibold rounded"
+      >
+        Get Started
+      </button>
+      <button
+        class="px-8 py-3 border border-white rounded hover:bg-white hover:text-black transition"
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="py-20 bg-white text-black">
+  <div class="max-w-7xl mx-auto px-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+    <div class="p-6 rounded shadow hover:shadow-lg transition">
+      <i class="fa-solid fa-mobile-screen text-3xl text-yellow-500"></i>
+      <h3 class="mt-4 text-xl font-semibold">Fully Responsive</h3>
+      <p class="mt-2 text-gray-600">
+        Works perfectly on mobile, tablet and desktop screens.
+      </p>
+    </div>
+
+    <div class="p-6 rounded shadow hover:shadow-lg transition">
+      <i class="fa-solid fa-bolt text-3xl text-yellow-500"></i>
+      <h3 class="mt-4 text-xl font-semibold">Fast Performance</h3>
+      <p class="mt-2 text-gray-600">
+        Optimized layout with clean Tailwind utility classes.
+      </p>
+    </div>
+
+    <div class="p-6 rounded shadow hover:shadow-lg transition">
+      <i class="fa-solid fa-code text-3xl text-yellow-500"></i>
+      <h3 class="mt-4 text-xl font-semibold">Clean Code</h3>
+      <p class="mt-2 text-gray-600">
+        Easy to customize and developer friendly structure.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-400 py-8 text-center">
+  <p>© 2026 Your Company. All Rights Reserved.</p>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+</body>
+</html>
